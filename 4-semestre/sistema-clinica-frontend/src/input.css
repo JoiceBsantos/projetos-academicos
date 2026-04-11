@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* opcional – deixa a topbar atrás do modal sem afetar layout */
+header, .topbar, nav[role="navigation"] { z-index: 100 !important; }
+
+/* ---- estilos customizados ---- */
+
+/* 🔒 Corrige o “olho duplo” do campo de senha */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear { display: none !important; }
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden !important; display: none !important; pointer-events: none;
+}
+
+/* Custom utilities/components */
+:root { color-scheme: light; }
+
+.focus-ring { @apply focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2; }
+
+.fade-in { animation: fadein .25s ease-in-out; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
+
+/* wrapper da tabela com borda e cantos arredondados */
+.table-wrap {
+  @apply overflow-x-auto border border-gray-200 rounded-2xl shadow-sm bg-white;
+}
+
+.alert { @apply rounded-lg p-3 border; }
+.alert-success { @apply bg-green-50 border-green-200 text-green-800; }
+.alert-error   { @apply bg-red-50 border-red-200 text-red-800; }
+.alert-info    { @apply bg-blue-50 border-blue-200 text-blue-800; }
+
+/* Backdrop do modal */
+.modal-backdrop { @apply fixed inset-0 bg-black/40 flex items-center justify-center p-4 overflow-hidden z-[9999]; }
+
+/* Conteúdo rolável do modal */
+.modal-scroll { max-height: 85vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+/* Cabeçalho/rodapé colados no card e por cima da navbar */
+.modal-sticky-top    { @apply sticky top-0    z-[100001]; }
+.modal-sticky-bottom { @apply sticky bottom-0 z-[100001] bg-white; }
+
+.modal-card      { @apply bg-white rounded-2xl shadow-xl w-full max-w-lg; }
+.input-wrap      { @apply relative; }
+.input-icon-right{ @apply absolute inset-y-0 right-3 grid place-content-center text-brand-700; }
+.card            { @apply bg-white rounded-2xl shadow-elegant border border-brand-100; }
+
+/* --- Animações suaves Voll.med --- */
+@keyframes voll-fade-in-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-voll-fade { animation: voll-fade-in-up 0.8s ease-out forwards; }
+
+@keyframes voll-breathe {
+  0%   { transform: translateY(0) scale(1);   opacity: 1; }
+  50%  { transform: translateY(-2px) scale(1.03); opacity: 0.96; }
+  100% { transform: translateY(0) scale(1);   opacity: 1; }
+}
+.animate-voll-logo { animation: voll-fade-in-up 0.8s ease-out forwards, voll-breathe 3.5s ease-in-out infinite; }
+
+/* ===== Tabelas (zebra + hover + borda) ===== */
+
+/* ✅ Todas as tabelas já saem com borda + zebra por padrão */
+table {
+  @apply w-full border border-gray-200 rounded-2xl overflow-hidden shadow-sm text-sm;
+}
+
+/* cabeçalho */
+table thead tr {
+  @apply bg-brand-100 text-brand-900;
+}
+
+table thead th {
+  @apply border-b border-gray-200;
+}
+
+/* linhas zebra */
+table tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+table tbody tr:nth-child(odd) {
+  @apply bg-white;
+}
+
+/* hover na linha */
+table tbody tr:hover {
+  @apply bg-blue-50 transition-colors;
+}
+
+/* 👉 linhas VERTICAIS entre colunas (grade completa) */
+table thead tr,
+table tbody tr {
+  @apply divide-x divide-gray-200;
+}
+
+/* Cabeçalho sempre com cor, sem efeito de hover (para quem usar .table-zebra explicitamente) */
+.table-zebra thead tr { @apply bg-brand-100 text-brand-900; }
+.table-zebra thead th { @apply border-b border-gray-200; }
+
+/* Zebra e hover só nas linhas do corpo */
+.table-zebra tbody tr:nth-child(even) { @apply bg-gray-50; }
+.table-zebra tbody tr:nth-child(odd)  { @apply bg-white; }
+.table-zebra tbody tr:hover           { @apply bg-blue-50 transition-colors; }
+
+/* Borda externa + cantos arredondados + sombra leve */
+.table-zebra { @apply border border-gray-200 rounded-2xl overflow-hidden shadow-sm; }
+
+/* Variante explícita de bordas (se quiser aplicar além do .table-zebra) */
+.table-borda              { @apply border border-gray-200 rounded-xl overflow-hidden; }
+.table-borda thead        { @apply border-b border-gray-200; }
+.table-borda tbody tr     { @apply border-b border-gray-200; }
+.table-borda tbody tr:last-child { @apply border-b-0; }
+/* Para grade vertical entre colunas, descomente se quiser só nessa variante: */
+/* .table-borda thead tr, .table-borda tbody tr { @apply divide-x divide-gray-200; } */
+
+/* seta personalizada para <select> com leve recuo à esquerda */
+.select-chevron{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem;             /* espaço para a seta */
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: right .35rem center; /* seta um pouco mais à esquerda */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+}
+
+/* overlay base */
+.deactivate-overlay,
+.cannot-deactivate-overlay{
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: rgba(0,0,0,.4); z-index: 9999999;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
+}
+.deactivate-overlay.show,
+.cannot-deactivate-overlay.show{ opacity: 1; pointer-events: auto; }
+
+/* cartão */
+.deactivate-card{
+  width: 100%; max-width: 520px; background: #fff; border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.16);
+  padding: 24px 22px; text-align: center; animation: scaleIn .16s ease;
+}
+@keyframes scaleIn{ from{ transform: scale(.98); opacity: .96 } to{ transform: scale(1); opacity: 1 } }
+
+.deactivate-icon{
+  width: 56px; height: 56px; margin: 6px auto 10px; border-radius: 14px;
+  background: #EEF6FF; display: grid; place-items: center; font-size: 26px;
+  color: #0B3C5D;
+}
+.deactivate-title{ font-weight: 700; font-size: 1.1rem; color: #0B3C5D; margin: 4px 0 10px; }
+.deactivate-doctor{
+  border: 1px solid #E5E7EB; border-radius: 14px; padding: 12px 14px; text-align: left;
+  background: #fff; margin: 6px 0 10px;
+}
+.deactivate-name{ color: #0B3C5D; font-weight: 600; }
+.deactivate-meta{ color: #6B7280; font-size: .9rem; margin-top: 2px; }
+.deactivate-text{ color: #0B3C5D; font-size: .95rem; line-height: 1.45; margin: 8px 2px 14px; }
+
+.deactivate-actions{ display: grid; gap: 10px; margin-top: 6px; }
+
+/* botões base */
+.btn-primary{
+  background: #0B3C5D; color: #fff; border: 0; border-radius: 12px;
+  height: 44px; padding: 0 16px; font-weight: 600; cursor: pointer;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+}
+.btn-primary:hover{ background: #0a3654; }
+
+.btn-outline{
+  background: #fff; color: #0B3C5D; border: 2px solid #0B3C5D; border-radius: 12px;
+  height: 44px; padding: 0 16px; font-weight: 600; cursor: pointer;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+}
+.btn-outline:hover{ background: #F3F7FB; }
+
+/* =========================
+   HOVER SUTIL NOS BOTÕES DOS MODAIS
+   ========================= */
+
+/* Botão "Desativar este perfil" */
+#btnConfirmDeactivate {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#btnConfirmDeactivate:hover {
+  background-color: #EFF6FF; /* azul bem clarinho */
+  color: #1E3A8A;            /* azul mais escuro no texto */
+}
+
+/* Botão "Entendi" do segundo alerta */
+#btnCantOk {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s.ease;
+}
+
+#btnCantOk:hover {
+  background-color: #EFF6FF;
+  color: #1E3A8A;
+}

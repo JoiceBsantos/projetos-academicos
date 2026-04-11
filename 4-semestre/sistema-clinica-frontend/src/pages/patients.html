@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voll.med</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+  </head>
+
+  <body class="min-h-screen bg-brand-50">
+    <!-- Topbar -->
+    <header class="bg-white/80 backdrop-blur shadow sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="../pages/doctors.html" class="flex items-center gap-2">
+            <div class="h-9 w-9 rounded-lg bg-brand-600 text-white grid place-content-center font-bold">V</div>
+            <span class="text-xl font-semibold text-brand-800">Voll.med</span>
+          </a>
+          <nav class="flex items-center gap-2">
+            <a data-nav="doctors" href="../pages/doctors.html" class="nav-link px-3 py-2 rounded-lg hover:bg-brand-50">Médicos</a>
+            <a data-nav="patients" href="../pages/patients.html" class="nav-link px-3 py-2 rounded-lg hover:bg-brand-50">Pacientes</a>
+            <a data-nav="appointments" href="../pages/appointments.html" class="nav-link px-3 py-2 rounded-lg hover:bg-brand-50">Consultas</a>
+          </nav>
+          <button id="logoutBtn" class="px-3 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="grid gap-6">
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl font-semibold text-brand-900">Pacientes</h1>
+          <button id="newPatientBtn" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg focus-ring">
+            Novo Paciente
+          </button>
+        </div>
+
+        <div id="alertArea"></div>
+
+        <div class="card p-4">
+          <!-- Busca -->
+          <div class="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+            <input
+              id="searchPatient"
+              class="border rounded-lg px-3 py-2 flex-1"
+              placeholder="Buscar por nome, e-mail, CPF, telefone..."
+            >
+          </div>
+
+          <!-- Tabela -->
+          <div class="table-wrap">
+            <table class="min-w-full table-zebra text-sm table-borda shadow-sm">
+              <thead>
+                <tr>
+                  <th class="text-left px-3 py-2">Nome</th>
+                  <th class="text-left px-3 py-2">E-mail</th>
+                  <th class="text-left px-3 py-2">CPF</th>
+                  <th class="text-left px-3 py-2">Telefone</th>
+                  <th class="text-left px-3 py-2 w-36">Agendamento</th>
+                  <th class="text-left px-3 py-2">Status</th>
+                  <th id="thActionsPatients" class="text-center px-3 py-2 w-44">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="patientsTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Paginação -->
+          <div id="pagination" class="flex items-center justify-between mt-4"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Root dos modais -->
+    <div id="modalRoot"></div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/ui/ui.js" type="module"></script>
+    <script src="../assets/js/services/storage.js" type="module"></script>
+    <script src="../assets/js/modules/common.js" type="module"></script>
+    <script>window.ACTIVE_PAGE='patients';</script>
+    <script src="../assets/js/modules/patients.js" type="module"></script>
+    <script src="../assets/js/modules/chatbot.js" type="module"></script>
+  </body>
+</html>

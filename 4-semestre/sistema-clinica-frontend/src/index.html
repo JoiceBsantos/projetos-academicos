@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Voll.med — Login</title>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-brand-50 via-brand-100 to-brand-200">
+    <main class="min-h-screen flex items-center justify-center p-4">
+      <section class="w-full max-w-md bg-white rounded-3xl shadow-elegant border border-brand-100 p-8">
+        
+        <!-- Cabeçalho centralizado -->
+        <div class="text-center mb-6">
+          <!-- logo com animação suave -->
+          <div class="mx-auto mb-4 h-12 w-12 rounded-2xl bg-brand-600/10 grid place-content-center animate-voll-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-700" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3l3.2 8h-2.2L12 7.8 11 11H8zM5 13h14v2H5zm2 4h10v2H7z"/>
+            </svg>
+          </div>
+
+          <!-- Nome e subtítulo com fade -->
+          <h1 class="text-2xl font-semibold text-brand-900 animate-voll-fade">Voll.med</h1>
+          <p class="text-sm text-brand-700 animate-voll-fade" style="animation-delay: 0.3s;">Área administrativa</p>
+        </div>
+
+        <!-- Formulário -->
+        <form id="loginForm" class="grid gap-4" novalidate>
+          <label class="grid gap-1">
+            <span class="text-sm text-brand-800">E-mail</span>
+            <input id="email" type="email" required
+                   class="w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                   placeholder="Digite seu e-mail" autocomplete="username">
+          </label>
+
+          <label class="grid gap-1 relative">
+            <span class="text-sm text-brand-800">Senha</span>
+            <input id="password" type="password" required minlength="6" maxlength="10"
+                   class="w-full border rounded-xl px-3 py-2 pr-12 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                   placeholder="••••••" autocomplete="current-password">
+            <button type="button" id="togglePwd"
+                    class="absolute inset-y-7 right-2 grid place-content-center w-9 h-9 rounded-full hover:bg-brand-50"
+                    aria-label="Mostrar/ocultar senha">
+              <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+              <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-700 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a10.056 10.056 0 012.268-3.742M6.223 6.223A9.956 9.956 0 0112 5c4.477 0 8.268 2.943 9.542 7-.436 1.388-1.154 2.64-2.084 3.682M15 12a3 3 0 00-3-3M3 3l18 18"/>
+              </svg>
+            </button>
+            <span class="text-xs text-brand-600 mt-1">Entre 6 e 10 caracteres.</span>
+          </label>
+
+          <div class="flex items-center justify-between text-sm">
+            <label class="inline-flex items-center gap-2 select-none">
+              <input id="remember" type="checkbox" class="rounded border-gray-300 text-brand-600">
+              <span class="text-brand-800">Lembrar-me</span>
+            </label>
+            <button id="forgotBtn" type="button" class="text-brand-800 hover:underline">Esqueci minha senha</button>
+          </div>
+
+          <button id="submitBtn" class="w-full rounded-xl px-4 py-2 bg-brand-600 text-white
+                         hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled>
+            Entrar
+          </button>
+
+          <p id="loginAlert" class="hidden alert alert-error">Credenciais inválidas.</p>
+        </form>
+
+        <div class="mt-4 text-center">
+          <button id="registerBtn" class="text-brand-600 hover:text-brand-700 text-sm underline">
+            Cadastrar novo usuário
+          </button>
+        </div>
+
+        <p class="mt-6 text-center text-xs text-brand-600">© Voll.med — acesso restrito</p>
+      </section>
+    </main>
+
+    <div id="modalRoot"></div>
+    <script type="module" src="./assets/js/modules/auth.js"></script>
+    <script type="module" src="./assets/js/modules/chatbot.js"></script>
+  </body>
+</html>
