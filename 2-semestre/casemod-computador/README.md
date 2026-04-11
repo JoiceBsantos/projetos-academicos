@@ -104,7 +104,7 @@ Este projeto conta com um vídeo demonstrando o processo e o resultado final:
 
 Confira os slides do projeto:
 
-👉 [Abrir apresentação](apresentacao-casemod.pdf)
+👉 [Abrir apresentação](proposta-casemod.pdf)
 
 ---
 
