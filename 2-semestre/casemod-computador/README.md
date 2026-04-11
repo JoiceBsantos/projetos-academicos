@@ -92,23 +92,35 @@ Grande parte dos materiais foi reaproveitada ou já disponível.
 
 ---
 
-## 📷 Observações
+## 🎥 Vídeo do Projeto
 
-O submarino presente nas imagens foi um elemento adicional incluído para enriquecer o cenário do projeto.
+Este projeto conta com um vídeo demonstrando o processo e o resultado final:
 
-Outros componentes como fonte, teclado, mouse e monitor foram reaproveitados de equipamentos disponíveis.
+👉 [Assistir vídeo](https://drive.google.com/file/d/1iv7pvAfIJuP4ZS2323g5gi6nSguH97tA/view?usp=drive_link)
+
+---
+
+## 📄 Apresentação
+
+Confira os slides do projeto:
+
+👉 [Abrir apresentação](apresentacao-casemod.pdf)
 
 ---
 
 ## 📷 Resultado do Projeto
 
-*(adicione aqui imagens do seu CaseMod na pasta /assets)*
+![CaseMod](assets/casemod-01.jpg)
+![CaseMod](assets/casemod-02.jpg)
+![CaseMod](assets/casemod-03.jpg)
 
-Exemplo:
+---
 
-```md
-![CaseMod](assets/casemod.jpg)
-```
+## 📷 Observações
+
+O submarino presente nas imagens foi um elemento adicional incluído para enriquecer o cenário do projeto.
+
+Outros componentes como fonte, teclado, mouse e monitor foram reaproveitados de equipamentos disponíveis.
 
 ---
 
