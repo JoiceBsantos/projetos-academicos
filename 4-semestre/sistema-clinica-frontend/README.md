@@ -1,3 +1,37 @@
+# 🏥 Vollmed - Sistema de Gerenciamento de Clínica (Frontend)
+
+Projeto desenvolvido no 4º semestre do curso de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento Front-end e integração com APIs.
+
+---
+
+## 👩‍💻 Minha Participação
+
+Fui responsável pelo desenvolvimento completo do **Front-end da aplicação**, incluindo:
+
+- Estruturação das telas
+- Implementação da interface com HTML, CSS (Tailwind) e JavaScript
+- Organização do código em módulos
+- Integração com a API do back-end
+- Manipulação dinâmica dos dados na interface
+
+---
+
+## 🔗 Projeto Completo
+
+Este front-end faz parte de um sistema completo desenvolvido em equipe.
+
+👉 Backend e estrutura geral:  
+https://github.com/luizcodee/clinica-backend-api
+
+---
+
+## 🎥 Demonstração
+
+Vídeo demonstrando o funcionamento do sistema na parte de front-end:
+
+👉 [Assistir vídeo](https://drive.google.com/file/d/1yQ1A_ZwfHzf0CcMPoBg8Mu5tMxbXRlC-/view?usp=sharing)
+
+
 # Vollmed - Sistema de Gerenciamento de Clínica (Frontend)
 
 O **Vollmed** é um sistema de gerenciamento de clínica onde o **administrador** consegue cadastrar médicos e pacientes, além de **agendar e gerenciar consultas**.  
