@@ -95,7 +95,7 @@ Acesse o protótipo desenvolvido:
 
 Este projeto conta com um vídeo explicativo apresentando a proposta da solução e suas funcionalidades.
 
-👉 [Assistir vídeo](https://drive.google.com/file/d/1ucjOSyeute9apweiqB59jmq8VB9hz6mJ/view?usp=drive_link)
+👉 [Assistir vídeo](https://drive.google.com/file/d/1nwnUozTwbnAmoWbmi5MKq5KTfnk0XvlN/view?usp=sharing)
 
 ---
 
