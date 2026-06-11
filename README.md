@@ -52,7 +52,28 @@ https://github.com/luizcodee/clinica-backend-api
 
 ### ⚫ 5º Semestre (em andamento)
 
-Projetos em desenvolvimento...
+⚫ 5º Semestre (em andamento)
+
+Projetos desenvolvidos nas disciplinas de Mobile Development, Desenvolvimento Web, DevOps, QA e Game Development.
+
+📱 Mobile Development
+- 💸 [AC3 - Caderneta de Gastos](https://github.com/JoiceBsantos/AC3---CadernetaDeGastos) — App de controle de gastos pessoais com React Native + Expo + TypeScript
+- 🍽️ [AC2 - App de Receitas](https://github.com/JoiceBsantos/AC2-App-Receitas) — Aplicativo de receitas culinárias
+
+🌐 Desenvolvimento Web
+- 🌐 [Network Dev (Front-end)](https://github.com/JoiceBsantos/network-dev) — Interface web da plataforma Network Dev
+- ⚙️ [Network Dev (Back-end)](https://github.com/JoiceBsantos/network-dev-back) — API e servidor da plataforma Network Dev
+
+⚙️ DevOps
+- 🚀 [Pedido Veloz](https://github.com/JoiceBsantos/pedido-veloz-devops) — Aplicação com pipeline DevOps
+
+🧪 Qualidade de Software (QA)
+- 🧪 [QA User API Tests](https://github.com/JoiceBsantos/qa-user-api-tests) — Testes automatizados de API
+
+🎮 Game Development
+- 🎮 [Top-Down Shooter](https://github.com/JoiceBsantos/godot-topdown-shooter) — Jogo desenvolvido com Godot Engine
+
+📁 [Ver todos os projetos do 5º semestre](./5-semestre/README.md)
 
 ---
 
@@ -101,7 +122,8 @@ projetos-academicos/
 │       └── tailwind.config.js
 │
 └── 5-semestre/
-    └── (em desenvolvimento)
+    └── README.md
+    └── (projetos referenciados via links)
 ```
 
 ---
